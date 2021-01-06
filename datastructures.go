@@ -2,11 +2,6 @@ package main
 
 import "fmt"
 
-func main() {
-	arrayExample()
-	slicesExample()
-}
-
 // Arrays
 func arrayExample() {
 	var arr [5]int      // fixed size empty array
