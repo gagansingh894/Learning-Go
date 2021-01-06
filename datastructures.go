@@ -54,5 +54,38 @@ func slicesExample() {
 	fmt.Printf("%T", b)
 }
 
-// Range Slice/Array
+// Range Slice/Array Examples
+func loopArrayExample(ar []int) {
+	lengthOfArray := len(ar)
+	for i := 0; i < lengthOfArray; i++ {
+		fmt.Println(ar[i])
+	}
+}
+
+func rangeExample(ar []int) {
+	for i, element := range ar {
+		fmt.Println(i, element)
+	}
+	for _, element := range ar {
+		fmt.Println(element)
+	}
+}
+
+func printDuplicate(ar []int) {
+	for i, e1 := range ar {
+		for j, e2 := range ar {
+			if j > i && e1 == e2 {
+				fmt.Println(e1)
+			}
+
+		}
+	}
+
+}
+
+func FindDuplicate(ar []int) {
+	visited [] int = []int{}
+	for i, e1 := range ar {
+}
+
 // Maps
