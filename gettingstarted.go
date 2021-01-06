@@ -1,27 +1,32 @@
 package main
 
 import (
-	"fmt"
+	"bufio"
 	"errors"
+	"fmt"
+	"os"
 )
 
 func main() {
-	hello_world_example() // Hello World Example
-	variable_example() // varaibel example
-	fmt.Println(add(2,3)) // function with parameter example
-	val, err := add(2,3)
+	helloWorldExample("Gagan") // Hello World Example
+	variableExample()          // varaibel example
+	fmt.Println(add(2, 3))     // function with parameter example
+	val, err := add(13, 3)
 	fmt.Println(val, err)
 	loops()
+	infiniteLoopBreak()
+	// consoleInputExample()
+	conditionExample("DOG")
 }
 
-func hello_world_example() {
-	fmt.Print("Hello World\n")
+func helloWorldExample(name string) {
+	fmt.Print("Hello World" + name)
 }
 
-func variable_example() {
+func variableExample() {
 
 	// default values
-	var a int 
+	var a int
 	var b float32
 	var c string
 	var d bool
@@ -50,4 +55,36 @@ func loops() {
 		n *= 2
 	}
 	fmt.Println(n)
+}
+
+func infiniteLoopBreak() {
+	condition := false
+	i := 1
+	for !condition {
+		i++
+		fmt.Println(i)
+		if i == 3 {
+			condition = true
+		}
+	}
+}
+
+func consoleInputExample() {
+	scanner := bufio.NewScanner(os.Stdin)
+	fmt.Println("Enter animal name")
+	scanner.Scan()
+	input := scanner.Text()
+	fmt.Printf(input)
+}
+
+func conditionExample(nameofAnimal string) string {
+	x := nameofAnimal
+	if x == "dog" {
+		fmt.Println("Dog")
+	} else if x == "cat" {
+		fmt.Println("Cat")
+	} else {
+		fmt.Println("New Animal")
+	}
+	return x
 }
