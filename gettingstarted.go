@@ -17,6 +17,7 @@ func main() {
 	infiniteLoopBreak()
 	// consoleInputExample()
 	conditionExample("DOG")
+	switchExample()
 }
 
 func helloWorldExample(name string) {
@@ -87,4 +88,18 @@ func conditionExample(nameofAnimal string) string {
 		fmt.Println("New Animal")
 	}
 	return x
+}
+
+func switchExample() {
+
+	alphabet := "c"
+
+	switch alphabet {
+	case "A", "a":
+		fmt.Println("Apple")
+	case "B", "b":
+		fmt.Println("Banana")
+	default:
+		fmt.Println("Not a Fruit")
+	}
 }
