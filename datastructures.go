@@ -4,6 +4,7 @@ import "fmt"
 
 func main() {
 	arrayExample()
+	slicesExample()
 }
 
 // Arrays
@@ -38,5 +39,25 @@ func arraySum(ar []int) int {
 }
 
 // Slices
+func slicesExample() {
+	var x [5]int = [5]int{1, 2, 3, 4, 5}
+	var s []int = x[:3] //slice
+	s2 := s[:1]         //slice of slice
+	fmt.Println(x)
+	fmt.Printf("%T", x)
+	fmt.Println(s)
+	fmt.Println(s2)
+
+	// implicit
+	var a []int = []int{5, 6, 7, 8, 9}
+	a = append(a, 10) // append to slice
+	fmt.Println(a)
+
+	// make example
+	b := make([]int, 5)
+	fmt.Println(b)
+	fmt.Printf("%T", b)
+}
+
 // Range Slice/Array
 // Maps
