@@ -83,9 +83,64 @@ func printDuplicate(ar []int) {
 
 }
 
-func FindDuplicate(ar []int) {
-	visited [] int = []int{}
-	for i, e1 := range ar {
+// Maps
+func mapExample() {
+	// key value pair
+	var mp map[string]int = map[string]int{
+		"gagan": 1,
+		"sahib": 2,
+		"savy":  3,
+	}
+	fmt.Println(mp)         // print all
+	fmt.Println(mp["savy"]) // print value based on key
+	mp["gagan"] = 5         // update value
+	fmt.Println(mp)
+	mp["prashant"] = 10 // add new value
+	fmt.Println(mp)
+	delete(mp, "prashant") // delete if key is present else nothing
+	fmt.Println(mp)
+	// check if key exists
+	val, ok := mp["gagan"] //key exists
+	fmt.Println(val, ok)
+	val, ok = mp["new"] // key does not exist
+	fmt.Println(val, ok)
+	fmt.Println(len(mp)) // print length
+	var mp2 map[int]int = map[int]int{}
+	fmt.Println(mp2) // empty map
 }
 
-// Maps
+func findFirstDuplicate(ar []int) {
+	res := map[int]int{}
+
+	for _, e := range ar {
+		_, ok := res[e]
+		if ok == false {
+			res[e] = 1
+		} else {
+			fmt.Println(e)
+			break
+		}
+	}
+
+}
+
+func findAllDuplicate(ar []int) {
+	/*
+		Function which prints all duplicate values
+	*/
+	res := map[int]int{}
+
+	for _, e := range ar {
+		_, ok := res[e]
+		if ok == false {
+			res[e] = 1
+		} else {
+			res[e]++
+		}
+	}
+	for k, v := range res {
+		if v != 1 {
+			fmt.Println(k)
+		}
+	}
+}

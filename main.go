@@ -16,5 +16,8 @@ func main() {
 	var arr []int = []int{1, 2, 3, 4, 5, 6, 7, 8, 4, 8}
 	// loopArrayExample(arr)
 	// rangeExample(arr)
-	printDuplicate(arr)
+	// printDuplicate(arr)
+	mapExample()
+	findFirstDuplicate(arr)
+	findAllDuplicate(arr)
 }
